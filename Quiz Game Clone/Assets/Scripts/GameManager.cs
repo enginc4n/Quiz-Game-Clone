@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     Quiz quiz;
     EndScreen endScreen;
+    [SerializeField] GameObject playScreen;
 
     void Awake()
     {
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        quiz.gameObject.SetActive(true);
+        quiz.gameObject.SetActive(false);
         endScreen.gameObject.SetActive(false);
     }
 
@@ -33,5 +34,11 @@ public class GameManager : MonoBehaviour
     public void OnReplayLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnPlayGame()
+    {
+        playScreen.gameObject.SetActive(false);
+        quiz.gameObject.SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] float timeToCompleteQuestion = 30f;
     [SerializeField] float timeToShowCorrectAnswer = 10f;
-    [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI timerText;
 
     public bool loadNextQuestion;
     public float fillFraction;
@@ -19,12 +19,12 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = timerValue.ToString();
+        timerText.text = timerValue.ToString();
     }
     void Update()
     {
         UpdateTimer();
-        scoreText.text = Mathf.RoundToInt(timerValue).ToString();
+        timerText.text = Mathf.RoundToInt(timerValue).ToString();
     }
 
     public void CancelTimer()
