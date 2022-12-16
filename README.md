@@ -1,2 +1,2 @@
-# Quiz Game Clone
+#Kim milyoner olmak ister clone
  
